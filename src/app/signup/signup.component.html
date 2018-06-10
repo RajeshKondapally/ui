@@ -1,0 +1,89 @@
+<div class="container">
+	<form class="form-horizontal" [formGroup]="form">
+			<!-- First Name -->
+			<div class="form-group" [ngClass]="displayFieldCss('fname')">
+			    <div class="col-sm-12">
+			      <label for="fname" class="control-label required">First Name</label>
+			      <input type="text" id="fname" class="form-control" [(ngModel)]="newStudent.firstname"  formControlName="fname">
+			      <app-field-error-display [displayError]="isFieldValid('fname')" errorMsg="Please inform your first name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!-- Last Name -->
+			<div class="form-group" [ngClass]="displayFieldCss('lname')">
+			    <div class="col-sm-12">
+			      <label for="lname" class="control-label required">Last Name</label>
+			      <input type="text" id="lname" class="form-control" [(ngModel)]="newStudent.lastname"  formControlName="lname">
+			      <app-field-error-display [displayError]="isFieldValid('lname')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!-- Phone -->
+		    <div class="form-group" [ngClass]="displayFieldCss('phone')">
+			    <div class="col-sm-12">
+			      <label for="phone" class="control-label required">Phone</label>
+			      <input type="text" id="phone" class="form-control" [(ngModel)]="newStudent.phone"  formControlName="phone">
+			      <app-field-error-display [displayError]="isFieldValid('phone')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!-- Email -->
+		    <div class="form-group" [ngClass]="displayFieldCss('email')">
+			    <div class="col-sm-12">
+			      <label for="email" class="control-label required">E-mail</label>
+			      <input type="email" id="email" class="form-control" [(ngModel)]="newStudent.email"  formControlName="email">
+			      <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!-- User Name -->
+		    <div class="form-group" [ngClass]="displayFieldCss('uname')">
+			    <div class="col-sm-12">
+			      <label for="uname" class="control-label required">User Name</label>
+			      <input type="text" id="uname" class="form-control" [(ngModel)]="newStudent.username"  formControlName="uname">
+			      <app-field-error-display [displayError]="isFieldValid('uname')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!-- Password -->
+		    <div class="form-group" [ngClass]="displayFieldCss('password')">
+			    <div class="col-sm-12">
+			      <label for="password" class="control-label required">Password</label>
+			      <input type="password" id="password" class="form-control" [(ngModel)]="newStudent.password"  formControlName="password">
+			      <app-field-error-display [displayError]="isFieldValid('password')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!--Confirm Password -->
+		    <!-- <div class="form-group" [ngClass]="displayFieldCss('confpassword')">
+			    <div class="col-sm-12">
+			      <label for="confpassword" class="control-label required">Confirm Password</label>
+			      <input type="password" id="confpassword" class="form-control" 
+			      formControlName="confpassword">
+			      <app-field-error-display [displayError]="isFieldValid('confpassword')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div> -->
+		    <!-- DOB -->
+		    <div class="form-group" [ngClass]="displayFieldCss('dob')">
+			    <div class="col-sm-12">
+			      <label for="dob" class="control-label required">D.O.B</label>
+			      <input type="date" id="dob" class="form-control" [(ngModel)]="newStudent.dob"  formControlName="dob">
+			      <app-field-error-display [displayError]="isFieldValid('dob')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <!-- Gender -->
+		    <div class="form-group" [ngClass]="displayFieldCss('gender')">
+			    <div class="col-sm-12">
+			      <label for="gender" class="control-label required">Gender</label>
+			      <input type="text" id="gender" class="form-control" [(ngModel)]="newStudent.gender"  formControlName="gender">
+			      <app-field-error-display [displayError]="isFieldValid('gender')" errorMsg="Please inform your name">
+			      </app-field-error-display>
+			    </div>
+		    </div>
+		    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+		    <button class="btn" (click)="reset()">Reset</button>
+		
+	</form>
+</div>
