@@ -188,15 +188,31 @@ module.exports = function (options) {
          * File loader for supporting images, for example, in CSS files.
          */
         {
-          test: /\.(jpg|png|gif)$/,
-          use: 'file-loader'
+          test: /\.(jpg?g|png|gif|ico)$/,
+          use: 'file-loader?name=assets/[name].[hash].[ext]'
         },
 
         /* File loader for supporting fonts, for example, in CSS files.
         */
         {
-          test: /\.(eot|woff2?|svg|ttf)([\?]?.*)$/,
-          use: 'file-loader'
+          test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+          loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+        },
+        {
+          test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+          loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+        },
+        {
+          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+          loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+        },
+        {
+          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+          loader: 'file-loader'
+        },
+        {
+          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+          loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
         },
         {
           test: /bootstrap\/dist\/js\/umd\//, use: 'imports-loader?jQuery=jquery'
