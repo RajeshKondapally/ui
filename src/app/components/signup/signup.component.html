@@ -1,0 +1,20 @@
+<div class="container">	
+	<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" id="student-tab" data-toggle="tab" href="#student" role="tab" aria-controls="home" aria-selected="true">Student</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="teacher-tab" data-toggle="tab" href="#teacher" role="tab" aria-controls="profile" aria-selected="false">Teacher</a>
+		</li>
+		
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		
+		<div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
+			<app-student></app-student>
+		</div>
+		<div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
+			<app-teacher></app-teacher>
+		</div>
+	</div>
+</div>

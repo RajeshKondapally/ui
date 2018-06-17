@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row profile">
+		<div class="teacher-card" *ngFor="let teacher of teachers">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div align="center">
+					<i class="fa fa-user tc-avatar" aria-hidden="true"></i>
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{teacher.username}}
+					</div>
+					<div class="profile-usertitle-job">
+						{{teacher.email}}
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<span class="animated bounce infinite">Enroll</span>
+					<!-- <button type="button" class="btn btn-success btn-sm">Register</button> -->
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+			</div>
+		</div>
+	</div>
+	
+	
+	<div *ngIf="teachers.length === 0">
+		Sorry!! No teachers are registered.
+	</div>
+	
+	
+</div>

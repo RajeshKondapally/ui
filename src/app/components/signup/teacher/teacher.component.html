@@ -1,0 +1,93 @@
+<div class="row show-hide-message">
+		<div [ngClass]="messageClass">
+			{{message}}
+		</div>
+	</div>
+
+<form class="form-horizontal" [formGroup]="form">
+			<!-- First Name -->
+			<div class="form-group" [ngClass]="displayFieldCss('tfname')">
+				<div class="col-sm-12">
+					<label for="tfname" class="control-label required">First Name</label>
+					<input type="text" id="tfname" class="form-control" [(ngModel)]="newTeacher.firstname"  formControlName="tfname">
+					<app-field-error-display [displayError]="isFieldValid('tfname')" errorMsg="Please inform your first name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!-- Last Name -->
+			<div class="form-group" [ngClass]="displayFieldCss('tlname')">
+				<div class="col-sm-12">
+					<label for="tlname" class="control-label required">Last Name</label>
+					<input type="text" id="tlname" class="form-control" [(ngModel)]="newTeacher.lastname"  formControlName="tlname">
+					<app-field-error-display [displayError]="isFieldValid('tlname')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!-- Phone -->
+			<div class="form-group" [ngClass]="displayFieldCss('tphone')">
+				<div class="col-sm-12">
+					<label for="tphone" class="control-label required">Phone</label>
+					<input type="text" id="tphone" class="form-control" [(ngModel)]="newTeacher.phone"  formControlName="tphone">
+					<app-field-error-display [displayError]="isFieldValid('tphone')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!-- Email -->
+			<div class="form-group" [ngClass]="displayFieldCss('temail')">
+				<div class="col-sm-12">
+					<label for="temail" class="control-label required">E-mail</label>
+					<input type="temail" id="temail" class="form-control" [(ngModel)]="newTeacher.email"  formControlName="temail">
+					<app-field-error-display [displayError]="isFieldValid('temail')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!-- User Name -->
+			<div class="form-group" [ngClass]="displayFieldCss('tuname')">
+				<div class="col-sm-12">
+					<label for="tuname" class="control-label required">User Name</label>
+					<input type="text" id="tuname" class="form-control" [(ngModel)]="newTeacher.username"  formControlName="tuname">
+					<app-field-error-display [displayError]="isFieldValid('tuname')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!-- Password -->
+			<div class="form-group" [ngClass]="displayFieldCss('tpassword')">
+				<div class="col-sm-12">
+					<label for="tpassword" class="control-label required">Password</label>
+					<input type="password" id="tpassword" class="form-control" [(ngModel)]="newTeacher.password"  formControlName="tpassword">
+					<app-field-error-display [displayError]="isFieldValid('tpassword')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!--Confirm Password -->
+			<!-- <div class="form-group" [ngClass]="displayFieldCss('confpassword')">
+						<div class="col-sm-12">
+								<label for="confpassword" class="control-label required">Confirm Password</label>
+								<input type="password" id="confpassword" class="form-control"
+								formControlName="confpassword">
+								<app-field-error-display [displayError]="isFieldValid('confpassword')" errorMsg="Please inform your name">
+								</app-field-error-display>
+						</div>
+			</div> -->	
+			<!-- Skills -->
+			<div class="form-group" [ngClass]="displayFieldCss('skills')">
+				<div class="col-sm-12">
+					<label for="skills" class="control-label required">Skills</label>
+					<input type="text" id="skills" class="form-control" [(ngModel)]="newTeacher.skills"  formControlName="skills">
+					<app-field-error-display [displayError]="isFieldValid('skills')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>
+			<!-- Biography -->
+			<div class="form-group" [ngClass]="displayFieldCss('bio')">
+				<div class="col-sm-12">
+					<label for="bio" class="control-label required">About Me</label>
+					<textarea id="bio" class="form-control" [(ngModel)]="newTeacher.bio"  formControlName="bio"></textarea>
+					<app-field-error-display [displayError]="isFieldValid('bio')" errorMsg="Please inform your name">
+					</app-field-error-display>
+				</div>
+			</div>		
+			<button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+			<button class="btn" (click)="reset()">Reset</button>
+			
+		</form>

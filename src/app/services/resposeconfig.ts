@@ -1,0 +1,7 @@
+export interface Response {
+	success: boolean;
+	message: string;
+	token: string;
+	user: object;
+
+}

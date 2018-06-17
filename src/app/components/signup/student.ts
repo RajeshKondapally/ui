@@ -4,11 +4,10 @@ export class Student {
 	 }
 	 firstname: string;
 	 lastname: string;
+	 type:string;
 	 phone: string;
 	 email: string;
 	 username: string;	
-	 password: string;	
-	 dob: string;
-	 gender: string
-
+	 password: string;
 }
+

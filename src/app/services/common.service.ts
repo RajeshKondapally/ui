@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FlashMessagesService } from 'angular2-flash-messages';
 @Injectable()
 export class CommonService {
 
-  constructor() { }
+  constructor( private flashMessageService: FlashMessagesService) { }
 
-  isFieldValid(field: string, form: any) {
+  isFieldValid(field: string, form: any) {    
     return !form.get(field).valid && form.get(field).touched;    
   }
 
@@ -26,5 +27,14 @@ export class CommonService {
         this.validateAllFormFields(control);
       }
     });
+  }
+
+  flashMessageShow(mesg, type) {
+    if(type === 'err') {
+      this.flashMessageService.show(mesg, {cssClass: 'alert-danger'});   
+    } else {
+      this.flashMessageService.show(mesg, {cssClass: 'alert-info'}); 
+    }
+    
   }
 }
