@@ -1,4 +1,9 @@
 <div class="container">
+	<div class="row show-hide-message">
+		<div [ngClass]="messageClass">
+			{{message}}
+		</div>
+	</div>
 	<form class="form-horizontal" [formGroup]="form">
 	<!-- User Name -->
 		    <div class="form-group" [ngClass]="displayFieldCss('uname')">
